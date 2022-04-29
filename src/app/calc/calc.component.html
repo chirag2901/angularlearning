@@ -1,0 +1,10 @@
+No1: <input type="text" [(ngModel)]="n1"/><br>
+No2: <input type="text" [(ngModel)]="n2"/><br>
+
+Add: <input type="radio" [(ngModel)]="opr" value="add"/><br>
+Mul: <input type="radio" [(ngModel)]="opr" value="mul"/><br>
+Div: <input type="radio" [(ngModel)]="opr" value="div"/><br>
+Sub: <input type="radio" [(ngModel)]="opr" value="sub"/><br>
+
+<button (click)="calculate()">Ans</button><br>
+{{ans}}
