@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { observable } from 'rxjs';
 import { SessionService } from '../session.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -34,7 +36,7 @@ export class SignupComponent implements OnInit {
     else{
       this.emailError=""
     }
-    if(this.passwordError.trim().length==0){
+    if(this.password.trim().length==0){
       this.passwordError="Please Enter Password"
       isError=true
     }
@@ -45,11 +47,18 @@ export class SignupComponent implements OnInit {
 
     }else{
       let user = {
-          "FirstName":this.firstName,
-          "Email":this.email,
-          "Password":this.password
+          "firstName":this.firstName,
+          "email":this.email,
+          "password":this.password
       }
-      this.sessionService.signupApi(user)
+      this.sessionService.signupApi(user).subscribe(resp=>{
+        if(resp.status == -1){
+          alert(resp.msg);
+          
+        }else{
+          alert(resp.msg);
+        }
+      })
     }
 
   }
@@ -60,3 +69,4 @@ signup(){
   
 }
 }
+

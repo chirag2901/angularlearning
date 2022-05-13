@@ -8,19 +8,30 @@ import { LoginComponent } from './login/login.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { FormsModule } from '@angular/forms';
 import { CalcComponent } from './calc/calc.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { ListUsersComponent } from './list-users/list-users.component';
+import { HomeComponent } from './customer/home/home.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    CalcComponent
+    CalcComponent,
+    ListUsersComponent,
+    HomeComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

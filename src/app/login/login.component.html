@@ -80,32 +80,19 @@ span.psw {
 
 <form action="/action_page.php" method="post">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    <!-- <img src="../../assets/nike.jpg" alt="Avatar" class="avatar"> -->
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    
+    <input type="text"  [(ngModel)]= "email" placeholder="Enter Email" [ngModelOptions]="{standalone: true}" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    
+    <input type="password"   [(ngModel)]= "password" placeholder="Enter Password"  [ngModelOptions]="{standalone: true}" required>
         
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  <!-- </div> -->
-  <!-- <div class="clearfix">
-    <button type="button" class="signupbtn"><a routerLink = "/signup">NewUser</a></button>
-    <button type="submit" class="signupbtn"><a routerLink = "/forgotpassword">ForgotPassword</a></button>
-  </div> -->
-    <button type="button" class="cancelbtn" ><a routerLink = "/signup">SignUp</a></button>
-    <button type="button" class="cancelbtn"><a routerLink = "/forgotpassword">ForgotPassword</a></button>
+    <button type="submit" (click) = "login()">Login</button>
+    
+  
   </div>
 </form>
 
